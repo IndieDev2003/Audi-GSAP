@@ -5,6 +5,7 @@ import Hero from "./components/Home/Hero";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import { Route, Routes } from "react-router";
+import Configure from "./pages/Configure";
 
 function App() {
   // const { theme } = useContext(AudiContext);
@@ -14,7 +15,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/contact" element={<Home />} />
+        <Route path="/configure" element={<Configure/>} />
       </Routes>
       {/* <Home /> */}
       <Footer />

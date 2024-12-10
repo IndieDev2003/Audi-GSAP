@@ -34,7 +34,9 @@ function Header() {
       ref={header}
       className="nav flex w-screen items-center justify-between px-2 top-0 z-50 sm:px-10 fixed bg-opacity-50 bg-gray-100 backdrop-blur-sm"
     >
-      <img src={logo} className="h-14 sm:h-12" alt="" />
+      <Link to={'/'}>
+        <img src={logo} className="h-14 sm:h-12" alt="" />
+      </Link>
       <div className="nav-in sm:flex gap-5 hidden text-gray-600">
         <Link to={"/"}>
           <h3 className="link cursor-pointer hover:text-black hover:scale-125">
@@ -62,7 +64,11 @@ function Header() {
           </h3>
         </Link>
       </div>
-      <Link to={"https://github.com/indiedev2003"} className="block sm:hidden" target="_blank">
+      <Link
+        to={"https://github.com/indiedev2003"}
+        className="block sm:hidden"
+        target="_blank"
+      >
         <h3 className="block sm:hidden text-lg cursor-pointer hover:text-black hover:scale-125">
           Github
         </h3>
