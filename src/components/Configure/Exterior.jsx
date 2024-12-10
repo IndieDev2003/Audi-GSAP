@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import sideView from "../../assets/configure/exterior.png";
 import innerView from "../../assets/configure/interior.png";
 import {
@@ -23,54 +23,62 @@ import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 function Exterior() {
-  const exteriorRef = useRef(null);
+    const exteriorRef = useRef(null);
 
-  useGSAP(
-    () => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: exteriorRef.current,
-          start: "top 75%",
-          end: "top -20%",
-          markers: true,
-          scrub: true,
-        },
-      });
+    function useLargeScreenEffect(callback, minWidth = 1024) {
+        useEffect(() => {
+          if (window.matchMedia(`(min-width: ${minWidth}px)`).matches) {
+            callback();
+          }
+        }, [callback, minWidth]);
+      }
 
-      tl.from(".sec-2 .exterior-txt", {
-        x: -150,
-      });
-      tl.from(".sec-2 #side-view-img", {
-        x: 1000,
-      });
-      tl.from(".sec-2 .ext-color-txt", {
-        y: 100,
-        opacity: 0,
-      });
-      tl.from(".sec-2 .ext-color", {
-        y: 100,
-        opacity: 0,
-      });
-      tl.from(".sec-2 .interior-view-img", {
-        y: 100,
-        opacity: 0,
-      });
-      tl.from(".sec-2 .interior-txt", {
-        x: -100,
-        opacity: 0,
-        scrollTrigger: {
-          trigger: ".sec-2 .interior-view-img",
-          start: "top 80%",
-          end: "top -20%",
-          markers: true,
-          scrub: true,
-        },
-      });
-    },
-    {
-      scope: exteriorRef.current,
-    }
-  );
+//   useGSAP(
+//     () => {
+//       const tl = gsap.timeline({
+//         scrollTrigger: {
+//           trigger: exteriorRef.current,
+//           start: "top 75%",
+//           end: "top -20%",
+//           markers: true,
+//           scrub: true,
+//         },
+//       });
+
+//       tl.from(".sec-2 .exterior-txt", {
+//         x: -150,
+//       });
+//       tl.from(".sec-2 #side-view-img", {
+//         x: 1000,
+//       });
+//       tl.from(".sec-2 .ext-color-txt", {
+//         y: 100,
+//         opacity: 0,
+//       });
+//       tl.from(".sec-2 .ext-color", {
+//         y: 100,
+//         opacity: 0,
+//       });
+//       tl.from(".sec-2 .interior-view-img", {
+//         y: 100,
+//         opacity: 0,
+//       });
+//       tl.from(".sec-2 .interior-txt", {
+//         x: -100,
+//         opacity: 0,
+//         scrollTrigger: {
+//           trigger: ".sec-2 .interior-view-img",
+//           start: "top 80%",
+//           end: "top -20%",
+//           markers: true,
+//           scrub: true,
+//         },
+//       });
+//     },
+//     {
+//       scope: exteriorRef.current,
+//     }
+//   );
 
   return (
     <div ref={exteriorRef} className="sec-2 px-2 sm:px-10 mt-5">
