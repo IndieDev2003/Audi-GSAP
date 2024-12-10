@@ -25,13 +25,7 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 function Exterior() {
     const exteriorRef = useRef(null);
 
-    function useLargeScreenEffect(callback, minWidth = 1024) {
-        useEffect(() => {
-          if (window.matchMedia(`(min-width: ${minWidth}px)`).matches) {
-            callback();
-          }
-        }, [callback, minWidth]);
-      }
+    
 
 //   useGSAP(
 //     () => {
@@ -81,8 +75,8 @@ function Exterior() {
 //   );
 
   return (
-    <div ref={exteriorRef} className="sec-2 px-2 sm:px-10 mt-5">
-      <div>
+    <div ref={exteriorRef} className="sec-2 h-screen px-2 sm:px-10 mt-5">
+      <div className="h-full flex flex-col justify-evenly items-start sm:block">
         <h2 className="text-2xl exterior-txt">Exterior</h2>
         <img id="side-view-img" src={sideView} alt="" />
         <h3 className="text-xl mb-2 ext-color-txt">Exterior Colors</h3>
