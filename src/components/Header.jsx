@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 // gsap.registerPlugin(useGSAP);
 function Header() {
   const header = useRef(null);
+  const {topFunction}= useContext(AudiContext)
 
   useGSAP(() => {
     const tl = gsap.timeline();
@@ -34,7 +35,7 @@ function Header() {
       ref={header}
       className="nav flex w-screen items-center justify-between px-2 top-0 z-50 sm:px-10 fixed bg-opacity-50 bg-gray-100 backdrop-blur-sm"
     >
-      <Link to={'/'}>
+      <Link to={'/'} onClick={topFunction}>
         <img src={logo} className="h-14 sm:h-12" alt="" />
       </Link>
       <div className="nav-in sm:flex gap-5 hidden text-gray-600">
