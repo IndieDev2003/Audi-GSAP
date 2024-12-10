@@ -41,7 +41,7 @@ function Hero() {
         <p className="text-xl text-white">Starting at $144,900</p>
         <div className="hero-btn hover:border-opacity-0 transition-all duration-500  flex flex-col sm:flex-row gap-2 sm:gap-4 my-4">
           <Link to={"/configure"} onClick={topFunction}>
-            <button className="btn px-x sm:px-6 py-3 rounded-xl bg-white text-black hover:border-opacity-0  hover:bg-black hover:text-white">
+            <button className="btn h-full w-full sm:px-6 py-3 rounded-xl bg-white text-black hover:border-opacity-0  hover:bg-black hover:text-white">
               Build & Price
             </button>
           </Link>
