@@ -33,10 +33,10 @@ function Hero() {
       ref={hero}
       className={`hero bg-[url(/heroBack.png)] h-screen bg-center sm: bg-cover`}
     >
-      <div className="flex flex-col items-start justify-end h-full px-10 py-20 text-white">
+      <div className="flex flex-col items-start justify-end h-full px-10 py-5 sm:py-20 text-white">
         <h2 className="text-white text-3xl">2023 Audi RS eTron GT</h2>
-        <p>Starting at $144,900</p>
-        <div className="hero-btn hover:border-opacity-0 transition-all duration-500  flex flex-col sm:flex-row gap-4 my-4">
+        <p className="text-xl text-white">Starting at $144,900</p>
+        <div className="hero-btn hover:border-opacity-0 transition-all duration-500  flex flex-col sm:flex-row gap-2 sm:gap-4 my-4">
           <button className="btn px-x sm:px-6 py-3 rounded-xl bg-white text-black hover:border-opacity-0  hover:bg-black hover:text-white">
             Build & Price
           </button>

@@ -3,33 +3,35 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 
-
-gsap.registerPlugin(ScrollTrigger,useGSAP)
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 function Features() {
+  const featureRef = useRef(null);
 
-  const featureRef = useRef(null)
+  useGSAP(
+    () => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: featureRef.current,
+          start: "top 75%",
+          end: "top 50%",
+          scrub: 0.5,
+        },
+      });
 
-  useGSAP(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: featureRef.current,
-        // markers: true,
-        start: 'top 75%',
-        end: 'top 50%',
-        // toggleActions: 'play reverse play',
-        scrub: 0.5,
-      }
-    })
-
-    tl.from('.feature-con .feature', {
-      x: 1000,
-      opacity: 0,
-      stagger:1
-    })
-  },{scope:featureRef.current})
+      tl.from(".feature-con .feature", {
+        x: 100,
+        opacity: 0,
+        stagger: 1,
+      });
+    },
+    { scope: featureRef.current }
+  );
 
   return (
-    <div ref={featureRef} className="feature-con min-h-[25vh] flex flex-col sm:flex-row items-center justify-center py-10 gap-10 sm:gap-40">
+    <div
+      ref={featureRef}
+      className="feature-con min-h-[25vh] flex flex-col sm:flex-row items-center justify-center py-10 gap-10 sm:gap-40"
+    >
       <div className="feature flex flex-col items-center justify-center">
         <h3 className="text-xl">Power</h3>
         <h2 className="text-3xl font-semibold">637HP</h2>

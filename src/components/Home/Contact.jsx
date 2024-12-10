@@ -15,7 +15,7 @@ function Contact() {
         trigger: contactRef.current,
         start: "top 60%",
         end: "top -10%",
-        markers: true,
+        // markers: true,
         scrub: true,
         
       }
@@ -23,7 +23,7 @@ function Contact() {
 
     tl.from('.contact h2', {
       y: 200,
-      duraion:3
+      
     })
     tl.from('.contact button', {
       y: -10,

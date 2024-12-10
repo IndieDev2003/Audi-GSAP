@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../assets/logo.svg";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -25,9 +26,9 @@ function Footer() {
           <li>Help</li>
         </ul>
         <ul>
-          <li>Github</li>
-          <li>Instagram</li>
-          <li>LinkedIn</li>
+          <Link target="_blank" to='https://github.com/indiedev2003'><li>Github</li></Link>
+          <Link target="_blank" to='https://instagram.com/_gagansuman_'><li>Instagram</li></Link>
+          <Link target="_blank" to='https://linkedin.com/in/gagan-suman'><li>LinkedIn</li></Link>
         </ul>
       </div>
       <div className="text-sm sm:text-lg border-t w-full text-center py-3">

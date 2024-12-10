@@ -31,7 +31,7 @@ function Showcase() {
     tl.from('.showcase p', {
       // duration: 0.5,
       delay:0.5,
-      y: -30,
+      x: 300,
       opacity:0
       
     }, '-=0.5')
